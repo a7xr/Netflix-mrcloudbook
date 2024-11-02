@@ -4,6 +4,9 @@ pipeline{
         jdk 'jdk17'
         nodejs 'node16'
     }
+    triggers {
+        pollSCM('* * * * *') // Vérifie toutes les minutes pour détecter les modifications
+    }
     environment {
         SCANNER_HOME=tool 'sonar-scanner'
     }

@@ -5,7 +5,7 @@ pipeline{
         nodejs 'node16'
     }
     triggers {
-        // pollSCM('* * * * *') // Ceci semble ne pas avoir fonctionner, vérifie toute les minutes pour détecter les modifications, 
+        // pollSCM('* * * * *') // Ceci semble ne pas avoir fonctionner, Vérifie toute les minutes pour détecter les modifications, 
         githubPush()
     }
     properties([pipelineTriggers([githubPush()])])

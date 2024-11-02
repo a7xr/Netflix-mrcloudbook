@@ -8,6 +8,7 @@ pipeline{
         // pollSCM('* * * * *') // Ceci semble ne pas avoir fonctionner, Vérifie toutes les minutes pour détecter les modifications, 
         githubPush()
     }
+    properties([pipelineTriggers([githubPush()])])
     environment {
         SCANNER_HOME=tool 'sonar-scanner'
     }

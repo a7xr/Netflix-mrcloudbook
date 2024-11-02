@@ -5,7 +5,8 @@ pipeline{
         nodejs 'node16'
     }
     triggers {
-        pollSCM('* * * * *') // Vérifie toutes les minutes pour détecter les modifications
+        // pollSCM('* * * * *') // Vérifie toutes les minutes pour détecter les modifications
+        githubPush()
     }
     environment {
         SCANNER_HOME=tool 'sonar-scanner'
